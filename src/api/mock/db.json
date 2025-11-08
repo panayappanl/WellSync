@@ -1,0 +1,77 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "patient@test.com",
+      "password": "1234",
+      "role": "patient",
+      "name": "John Doe"
+    },
+    {
+      "id": "2",
+      "email": "provider@test.com",
+      "password": "1234",
+      "role": "provider",
+      "name": "Dr. Rao"
+    },
+    {
+      "id": "caa3",
+      "name": "Akshatha",
+      "email": "akshatha@test.com",
+      "password": "1234",
+      "role": "patient"
+    },
+    {
+      "id": "bcdb",
+      "name": "sriranga",
+      "email": "sriranga@test.com",
+      "password": "1234",
+      "role": "provider"
+    }
+  ],
+  "patient": {
+    "dashboard": {
+      "goals": {
+        "steps": 5600,
+        "water": 1.8,
+        "sleep": 7
+      },
+      "reminders": [
+        {
+          "title": "Annual Blood Test",
+          "date": "2025-11-15"
+        }
+      ],
+      "healthTip": "Drink water before meals."
+    },
+    "profile": {
+      "id": 1,
+      "name": "John Doe",
+      "age": 25,
+      "allergies": "None",
+      "medications": ""
+    },
+    "goals": [
+      {
+        "date": "2025-11-08",
+        "steps": 5600,
+        "water": 1.8,
+        "sleep": 7
+      }
+    ]
+  },
+  "provider": {
+    "patients": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "status": "Goal Met"
+      },
+      {
+        "id": 2,
+        "name": "Asha",
+        "status": "Missed Checkup"
+      }
+    ]
+  }
+}
