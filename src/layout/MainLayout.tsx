@@ -1,26 +1,49 @@
 // src/layout/MainLayout.tsx
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Button, Container } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 const MainLayout: React.FC = () => {
-  return (
-    <>
-      <AppBar position="static" sx={{ mb: 4 }}>
-        <Toolbar>
-          <Button color="inherit" component={Link} to="/">Home</Button>
-          <Button color="inherit" component={Link} to="/about">About</Button>
-          <Button color="inherit" component={Link} to="/contact">Contact</Button>
-          <Button color="inherit" component={Link} to="/features">Features</Button>
-        </Toolbar>
-      </AppBar>
+    const location = useLocation();
 
-      {/* 🧩 This renders the active child route */}
-      <Container>
-        <Outlet />
-      </Container>
-    </>
-  );
+    return (
+        <>
+            <AppBar position="static">
+                <Toolbar>                  
+                    <Box>
+                        <Button
+                            color="inherit"
+                            component={Link}
+                            to="/profile"
+                            sx={{
+                                flexGrow: 0.5,
+                                borderBottom:
+                                    location.pathname === '/profile' ? '2px solid #fff' : 'none',
+                            }}
+                        >
+                            Profile
+                        </Button>
+                        <Button
+                            color="inherit"
+                            component={Link}
+                            to="/users"
+                            sx={{
+                                borderBottom:
+                                    location.pathname === '/users' ? '2px solid #fff' : 'none',
+                            }}
+                        >
+                            User List
+                        </Button>
+                    </Box>
+                </Toolbar>
+            </AppBar>
+
+            {/* Active route content */}
+            <Box sx={{ p: 3 }}>
+                <Outlet />
+            </Box>
+        </>
+    );
 };
 
 export default MainLayout;
