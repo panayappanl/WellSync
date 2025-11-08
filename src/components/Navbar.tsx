@@ -90,13 +90,13 @@ const Navbar = () => {
               >
                 {user?.name}
               </Typography>
-              <Button
+              {/* <Button
                 color="inherit"
                 onClick={handleLogout}
                 sx={{ fontSize: { xs: "0.75rem", sm: "0.875rem" } }}
               >
                 Logout
-              </Button>
+              </Button> */}
             </>
           ) : (
             <>
